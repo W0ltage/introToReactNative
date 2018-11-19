@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import { AppRegistry, Image } from 'react-native';
+import React from 'react';
+import { AppRegistry, Image, Alert } from 'react-native';
 
-export default class Bananas extends Component {
-  render() {
-    let pic = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-    };
-    return (
-      <Image source={pic} style={{width: 193, height: 110}}/>
-    );
+class Bananas extends React.Component {
+  static BananaFunction(){
+    Alert.alert("BANANAS ON THE WAY GO AWAY !!!!")
   }
 }
+
+const Banana = new Bananas();
+export default Bananas;
