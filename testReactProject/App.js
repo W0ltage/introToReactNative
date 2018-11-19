@@ -1,17 +1,50 @@
 import React from 'react';
 import { StyleSheet, Text, View, Alert, Platform,Button } from 'react-native';
-import Banana from './Bananas.js';
+import {createMaterialTopTabNavigator, createTabNavigator, createAppContainer, TabNavigator} from 'react-navigation';
+import Bananas from './Bananas'
+import Bananas2 from './Bananas2'
 
+var Navigator = createMaterialTopTabNavigator({
+  Tab1: {screen: Bananas},
+  Tab2: {screen: Bananas2}
+},{
+  tabBarPosition: 'bottom',
+  swipeEnabled: true,
+  tabBarOptions:{
+    style: {
+      backgroundColor: 'black',
+    },
+    inactiveBackgroundColor: 'black',
+    labelStyle: {
+      fontSize: 16,
+      padding: 10,  
+      color: 'yellow'
+    }
+  }
+}) 
+
+
+Navigator.navigationOptions = {
+    title: "TabExample"
+};
+
+const app = createAppContainer(Navigator);
+
+export default app;
+
+/*
 export default class App extends React.Component {
 
   constructor(props){
     super(props)
 
     Obj = new Second();
+
   }
 
   CallFunction1 = () => {
-    Banana.BananaFunction();
+    <createBottomTabNavigator/>
+    //Banana.BananaFunction();
   }
 
   CallFunction2 = () =>{
@@ -34,7 +67,7 @@ export default class App extends React.Component {
           <Button title="Call Another Class Function With Argument" onPress={this.CallFunction2} />
 
         </View>
-       
+        
       </View>
     );
   }
@@ -66,4 +99,6 @@ const styles = StyleSheet.create(
       paddingTop: (Platform.OS) === 'ios' ? 20 : 0
     }
   
-  });
+});
+
+*/

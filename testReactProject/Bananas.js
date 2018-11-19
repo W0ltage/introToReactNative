@@ -1,11 +1,19 @@
 import React from 'react';
-import { AppRegistry, Image, Alert } from 'react-native';
+import {View, Text, Button, Image, Alert } from 'react-native';
 
-class Bananas extends React.Component {
-  static BananaFunction(){
-    Alert.alert("BANANAS ON THE WAY GO AWAY !!!!")
+export default class Bananas extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: 'Tab1'
   }
-}
 
-const Banana = new Bananas();
-export default Bananas;
+  render(){
+    return(
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text style = {{fontSize: 35}}>
+            This is first bananas tab
+        </Text>
+      </View>
+    );
+  }
+
+}
